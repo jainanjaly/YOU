@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  background-color: #0d0d0d;
+  color: #f0f0f0;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none;
+}
+
+*, *::before, *::after {
+  cursor: inherit;
+}
+
+/* Ambient living background */
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(232, 121, 160, 0.18), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.18), transparent 50%);
+  background-size: 200% 200%, 200% 200%;
+  animation: ambient 24s ease-in-out infinite;
+  filter: blur(40px);
+}
+
+@keyframes ambient {
+  0% {
+    background-position: 0% 0%, 100% 100%;
+  }
+  50% {
+    background-position: 100% 50%, 0% 50%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%;
+  }
+}
+
+/* Section card border glow */
+.card-glow {
+  background: #141414;
+  border: 0.5px solid rgba(232, 121, 160, 0.18);
+  box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.05) inset;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-glow:hover {
+  border-color: rgba(232, 121, 160, 0.45);
+  box-shadow: 0 10px 40px -10px rgba(232, 121, 160, 0.25);
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  color: #a855f7;
+}
+
+/* Selection */
+::selection {
+  background: rgba(232, 121, 160, 0.35);
+  color: #f0f0f0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e879a0;
+}
+
+/* Pixel avatar via box-shadow pixel art */
+.pixel-avatar {
+  --p: 6px;
+  width: var(--p);
+  height: var(--p);
+  position: relative;
+}
+
+/* Marquee container — duplicate content inside for seamless loop */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+@media (max-width: 640px) {
+  body { cursor: auto; }
+  .cursor-sparkle { display: none !important; }
+}
