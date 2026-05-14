@@ -28,7 +28,7 @@ const events = [
   },
   {
     year: 'Now',
-    title: 'still writing this chapter',
+    title: 'still learning...',
     note: '',
     italic: true,
   },
@@ -51,9 +51,9 @@ export default function Timeline() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="font-serif text-4xl md:text-5xl font-semibold mt-3 mb-14 text-ink"
+          className="display-serif text-4xl md:text-5xl font-semibold mt-3 mb-14 text-ink"
         >
-          The journey, unfiltered
+          Timeline
         </motion.h2>
 
         <ol className="relative">
@@ -73,15 +73,11 @@ export default function Timeline() {
               >
                 {e.year}
               </div>
-              <div className="relative pl-6 border-l border-white/10">
+              <div className="relative pl-6 border-l border-rule">
                 <span
-                  className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full"
-                  style={{
-                    background: e.italic
-                      ? '#444'
-                      : 'linear-gradient(135deg, #e879a0, #7c3aed)',
-                    boxShadow: e.italic ? 'none' : '0 0 12px rgba(232,121,160,0.6)',
-                  }}
+                  className={`absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full ring-4 ring-bg ${
+                    e.italic ? 'bg-rule' : 'bg-pink'
+                  }`}
                 />
                 <h3
                   className={`font-serif text-lg md:text-xl ${

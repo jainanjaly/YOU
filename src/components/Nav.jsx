@@ -55,24 +55,24 @@ export default function Nav() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
-          className="pointer-events-auto relative w-12 h-12 rounded-full border border-white/10 bg-card/80 backdrop-blur-md hover:border-pink/50 transition-colors flex items-center justify-center group"
+          className="pointer-events-auto relative w-12 h-12 rounded-full border border-rule bg-card/85 backdrop-blur-md hover:border-ink transition-colors flex items-center justify-center group"
         >
           <span className="sr-only">Menu</span>
           <div className="relative w-5 h-4">
             <motion.span
               animate={open ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute left-0 right-0 top-0 h-[1.5px] bg-ink group-hover:bg-pink"
+              className="absolute left-0 right-0 top-0 h-[1.5px] bg-ink"
             />
             <motion.span
               animate={open ? { opacity: 0 } : { opacity: 1 }}
               transition={{ duration: 0.2 }}
-              className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[1.5px] bg-ink group-hover:bg-pink"
+              className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[1.5px] bg-ink"
             />
             <motion.span
               animate={open ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute left-0 right-0 bottom-0 h-[1.5px] bg-ink group-hover:bg-pink"
+              className="absolute left-0 right-0 bottom-0 h-[1.5px] bg-ink"
             />
           </div>
         </button>
@@ -87,8 +87,7 @@ export default function Nav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[70] bg-bg/95 backdrop-blur-xl flex items-start md:items-center justify-center overflow-y-auto py-20"
-            onClick={() => setOpen(false)}
+            className="fixed inset-0 z-[70] bg-bg/95 backdrop-blur-xl flex items-start md:items-center justify-center overflow-y-auto py-20"            onClick={() => setOpen(false)}
           >
             <motion.nav
               onClick={(e) => e.stopPropagation()}
@@ -111,8 +110,8 @@ export default function Nav() {
                       to={l.to}
                       end={l.to === '/'}
                       className={({ isActive }) =>
-                        `group w-full flex items-center justify-between py-2 border-b border-white/5 hover:border-pink/40 transition-colors ${
-                          isActive ? 'border-pink/40' : ''
+                        `group w-full flex items-center justify-between py-2 border-b border-rule hover:border-ink transition-colors ${
+                          isActive ? 'border-ink' : ''
                         }`
                       }
                     >
@@ -122,7 +121,7 @@ export default function Nav() {
                             className={`font-serif text-lg md:text-xl transition-colors ${
                               isActive
                                 ? 'text-pink'
-                                : 'text-ink/80 group-hover:text-ink'
+                                : 'text-ink-soft group-hover:text-ink'
                             }`}
                           >
                             {l.label}
@@ -147,7 +146,7 @@ export default function Nav() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
-                className="font-mono text-[11px] text-muted/60 text-center mt-6"
+                className="font-mono text-[11px] text-muted text-center mt-6"
               >
                 press · esc · to close
               </motion.p>

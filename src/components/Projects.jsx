@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { label } from 'framer-motion/client';
 import { useEffect, useState } from 'react';
 
 // Each completed project has a detailed page view.
@@ -71,7 +70,7 @@ const completed = [
         "Developed a computer vision system using Python and OpenCV to detect and track vehicles in video footage. Implemented algorithms to calculate speed based on object movement and frame rate, providing real-time speed estimates.",
       stack: ['Python', 'OpenCV', 'NumPy', 'Pandas', 'Matplotlib'],
       links: [
-        { label: 'Project Link →', href: '#' /* TODO: add link */ },
+        { label: 'Project Link →', href: 'https://github.com/jainanjaly/Vehicle_Speed_Estimation_Using_YOLO' /* TODO: add link */ },
       ],
       images: ["projects/vehicle/vehicle_1.jpg", "projects/vehicle/vehicle_2.jpg"],
       achievements: [
@@ -124,45 +123,47 @@ const ongoing = [
 function ProjectCard({ p, onOpen, isOngoing }) {
   return (
     <motion.article
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5 }}
-      whileHover={{
-        y: -6,
-        boxShadow: '0 20px 60px -20px rgba(232,121,160,0.45)',
-      }}
+      whileHover={{ y: -3 }}
       onClick={isOngoing ? undefined : onOpen}
-      className={`card-glow rounded-2xl p-6 flex flex-col ${
+      className={`group rounded-2xl bg-card border border-rule p-6 md:p-7 flex flex-col h-full transition-colors hover:border-ink/30 ${
         isOngoing ? '' : 'cursor-pointer'
       }`}
     >
-      <div className="flex items-baseline justify-between gap-4">
-        <h3 className="font-serif text-xl text-ink">{p.name}</h3>
-        <span className="font-mono text-xs text-muted shrink-0">{p.year}</span>
+      <div className="flex items-center justify-between gap-4 mb-4">
+        <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
+          {p.year}
+        </span>
+        {isOngoing && (
+          <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-emerald-700">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+            in progress
+          </span>
+        )}
       </div>
-      <p className="text-muted text-sm mt-3 leading-relaxed">{p.short}</p>
-      <div className="flex flex-wrap gap-2 mt-5">
+      <h3 className="font-serif text-2xl text-ink leading-tight">{p.name}</h3>
+      <p className="text-muted text-[15px] mt-3 leading-relaxed flex-1">
+        {p.short}
+      </p>
+      <div className="flex flex-wrap gap-1.5 mt-5">
         {p.tags.map((t) => (
           <span
             key={t}
-            className="px-2.5 py-1 rounded-full text-xs font-mono text-pink-soft border border-pink/20 bg-pink/5"
+            className="px-2 py-0.5 rounded text-[11px] font-mono text-ink-soft bg-warm border border-rule"
           >
             {t}
           </span>
         ))}
       </div>
       {!isOngoing && (
-        <div className="mt-6">
-          <span className="inline-flex items-center text-sm text-ink/90 hover:text-pink transition-colors font-medium">
-            Dive Deep →
+        <div className="mt-6 pt-5 border-t border-rule">
+          <span className="inline-flex items-center gap-1.5 text-sm text-ink group-hover:text-pink transition-colors font-medium">
+            Read case study
+            <span className="transition-transform group-hover:translate-x-0.5">→</span>
           </span>
-        </div>
-      )}
-      {isOngoing && (
-        <div className="mt-6 inline-flex items-center gap-2 font-mono text-xs text-emerald-300">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          in progress
         </div>
       )}
     </motion.article>
@@ -189,8 +190,7 @@ function ProjectDetail({ project, onClose }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       className="fixed inset-0 z-[120] bg-bg/95 backdrop-blur-md overflow-y-auto"
-    >
-      <motion.div
+    >      <motion.div
         initial={{ y: 30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 30, opacity: 0 }}
@@ -233,7 +233,7 @@ function ProjectDetail({ project, onClose }) {
               {d.stack.map((s) => (
                 <span
                   key={s}
-                  className="px-3 py-1.5 rounded-full text-sm border border-white/10 bg-card text-ink/90"
+                  className="px-3 py-1.5 rounded-full text-sm border border-rule bg-card text-ink-soft"
                 >
                   {s}
                 </span>
@@ -259,7 +259,7 @@ function ProjectDetail({ project, onClose }) {
                     href={src}
                     target="_blank"
                     rel="noreferrer"
-                    className="group block overflow-hidden rounded-xl border border-white/10 hover:border-pink/40 transition-colors"
+                    className="group block overflow-hidden rounded-xl border border-rule hover:border-ink/30 transition-colors"
                   >
                     <img
                       src={src}
@@ -279,8 +279,7 @@ function ProjectDetail({ project, onClose }) {
                 {d.achievements.map((a, i) => (
                   <li
                     key={i}
-                    className="card-glow rounded-xl p-4 text-ink/90 text-sm md:text-base flex gap-3"
-                    style={{ borderColor: 'rgba(232,121,160,0.25)' }}
+                    className="rounded-xl p-4 text-ink-soft text-sm md:text-base flex gap-3 bg-card border border-rule"
                   >
                     <span className="text-pink">★</span>
                     <span>{a}</span>
@@ -298,7 +297,7 @@ function ProjectDetail({ project, onClose }) {
                   href={l.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-5 py-2.5 rounded-full text-sm font-medium text-ink bg-gradient-to-r from-pink to-violet shadow-[0_8px_30px_-10px_rgba(232,121,160,0.6)] hover:shadow-[0_12px_40px_-10px_rgba(168,85,247,0.7)] transition-shadow"
+                  className="px-5 py-2.5 rounded-full text-sm font-medium bg-ink text-bg hover:bg-pink transition-colors"
                 >
                   {l.label}
                 </a>
@@ -331,18 +330,18 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="font-serif text-4xl md:text-5xl font-semibold mt-3 mb-4 text-ink"
+          className="display-serif text-4xl md:text-5xl font-semibold mt-3 mb-4 text-ink"
         >
-          Things I&apos;ve actually shipped
+          Projects
         </motion.h2>
-        <p className="text-muted mb-12 max-w-2xl">
-          Some are out in the world, some are still cooking. Click any of the
-          shipped ones to read the full story.
+        <p className="text-muted mb-14 max-w-xl text-[15px] leading-relaxed">
+          A mix of shipped projects and things still in progress. Click any of
+          the completed ones for the full write-up.
         </p>
 
         <div className="mb-16">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted mb-5">
-            Currently Building
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted mb-5">
+            In progress
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             {ongoing.map((p) => (
@@ -352,7 +351,7 @@ export default function Projects() {
         </div>
 
         <div>
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted mb-5">
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted mb-5">
             Shipped
           </p>
           <div className="grid md:grid-cols-2 gap-6">

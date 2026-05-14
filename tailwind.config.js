@@ -4,19 +4,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#0d0d0d',
-        card: '#141414',
-        ink: '#f0f0f0',
-        muted: '#888888',
+        // Editorial / light theme palette.
+        // Token names kept (bg/card/ink/muted/pink/violet) so existing components cascade.
+        bg: '#FBF8F4',        // warm cream paper background
+        card: '#FFFFFF',      // clean surface
+        warm: '#F2EDE5',      // warm gray section background
+        ink: '#1B1B1F',       // deep charcoal text
+        'ink-soft': '#2D2D33',
+        muted: '#6B6B72',     // warm gray secondary text
+        rule: '#E9E3DA',      // subtle warm border / divider
         pink: {
-          soft: '#f4a7c3',
-          DEFAULT: '#e879a0',
-          glow: 'rgba(232, 121, 160, 0.35)',
+          soft: '#F4D9E2',    // light wash (tags, hovers)
+          DEFAULT: '#B84D6A', // dusty rose accent — readable on cream
+          deep: '#8E2F4A',    // hover / pressed
+          glow: 'rgba(184, 77, 106, 0.15)',
         },
         violet: {
-          soft: '#a855f7',
-          DEFAULT: '#7c3aed',
-          glow: 'rgba(124, 58, 237, 0.35)',
+          soft: '#9B7BAE',
+          DEFAULT: '#6E4B6B', // muted plum, used sparingly
+          glow: 'rgba(110, 75, 107, 0.12)',
         },
       },
       fontFamily: {
@@ -37,11 +43,6 @@ export default {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
-        ambient: {
-          '0%': { backgroundPosition: '0% 0%, 100% 100%' },
-          '50%': { backgroundPosition: '100% 50%, 0% 50%' },
-          '100%': { backgroundPosition: '0% 0%, 100% 100%' },
-        },
         blink: {
           '0%, 50%': { opacity: '1' },
           '50.01%, 100%': { opacity: '0' },
@@ -50,8 +51,7 @@ export default {
       animation: {
         bob: 'bob 4s ease-in-out infinite',
         bounceSoft: 'bounceSoft 2s ease-in-out infinite',
-        marquee: 'marquee 30s linear infinite',
-        ambient: 'ambient 24s ease-in-out infinite',
+        marquee: 'marquee 40s linear infinite',
         blink: 'blink 1s steps(1) infinite',
       },
     },

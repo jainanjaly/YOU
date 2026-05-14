@@ -30,13 +30,12 @@ export default function Publications() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="font-serif text-4xl md:text-5xl font-semibold mt-3 mb-4 text-ink"
+          className="display-serif text-4xl md:text-5xl font-semibold mt-3 mb-4 text-ink"
         >
-          Things I&apos;ve written down properly
+          Writing
         </motion.h2>
-        <p className="text-muted max-w-2xl mb-12">
-          A small but growing pile of work that lives outside this site. Each
-          one took longer than I&apos;d like to admit.
+        <p className="text-muted max-w-xl mb-12 text-[15px] leading-relaxed">
+          Each one took longer than I'd like to admit.
         </p>
 
         <div className="space-y-6">
@@ -50,45 +49,20 @@ export default function Publications() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              whileHover={{ y: -4 }}
-              className="card-glow group rounded-2xl p-7 flex flex-col md:flex-row md:items-center gap-6 relative overflow-hidden"
+              whileHover={{ y: -3 }}
+              className="group rounded-2xl bg-card border border-rule hover:border-ink/30 transition-colors p-6 md:p-7 flex flex-col md:flex-row md:items-center gap-6"
             >
-              {/* paper-stack visual */}
-              <div className="relative w-20 h-24 shrink-0">
-                <div
-                  className="absolute inset-0 rounded-md border border-white/10 bg-card translate-x-2 translate-y-2 opacity-60"
-                  aria-hidden
-                />
-                <div
-                  className="absolute inset-0 rounded-md border border-pink/30 bg-card translate-x-1 translate-y-1 opacity-80"
-                  aria-hidden
-                />
-                <div className="absolute inset-0 rounded-md border border-pink/40 bg-gradient-to-br from-pink/10 to-violet/10 flex items-center justify-center">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"
-                      stroke="url(#pg)"
-                      strokeWidth="1.4"
-                    />
-                    <path d="M14 3v6h6" stroke="url(#pg)" strokeWidth="1.4" />
-                    <path
-                      d="M8 13h8M8 16h8M8 19h5"
-                      stroke="#a855f7"
-                      strokeWidth="1.2"
-                      strokeLinecap="round"
-                    />
-                    <defs>
-                      <linearGradient id="pg" x1="0" x2="1" y1="0" y2="1">
-                        <stop offset="0%" stopColor="#e879a0" />
-                        <stop offset="100%" stopColor="#a855f7" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </div>
+              {/* paper icon */}
+              <div className="w-14 h-16 shrink-0 rounded-md border border-rule bg-warm flex items-center justify-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B84D6A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" />
+                  <path d="M14 3v6h6" />
+                  <path d="M8 13h8M8 16h8M8 19h5" />
+                </svg>
               </div>
 
               <div className="flex-1 min-w-0">
-                <p className="font-mono text-xs text-pink uppercase tracking-[0.2em]">
+                <p className="font-mono text-[11px] text-muted uppercase tracking-[0.22em]">
                   {p.venue} · {p.year}
                 </p>
                 <h3 className="font-serif text-xl md:text-2xl text-ink mt-2 leading-snug group-hover:text-pink transition-colors">
@@ -97,11 +71,11 @@ export default function Publications() {
                 <p className="text-muted text-sm mt-3 leading-relaxed">
                   {p.summary}
                 </p>
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-1.5 mt-4">
                   {p.tags.map((t) => (
                     <span
                       key={t}
-                      className="px-2.5 py-1 rounded-full text-xs font-mono text-pink-soft border border-pink/20 bg-pink/5"
+                      className="px-2 py-0.5 rounded text-[11px] font-mono text-ink-soft bg-warm border border-rule"
                     >
                       {t}
                     </span>
@@ -109,8 +83,8 @@ export default function Publications() {
                 </div>
               </div>
 
-              <span className="font-mono text-sm text-ink/80 group-hover:text-pink transition-colors shrink-0">
-                Read article →
+              <span className="font-mono text-sm text-ink group-hover:text-pink transition-colors shrink-0">
+                Read →
               </span>
             </motion.a>
           ))}

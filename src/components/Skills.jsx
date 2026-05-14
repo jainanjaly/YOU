@@ -11,7 +11,7 @@ const groups = [
   },
   {
     name: 'Currently Learning',
-    pills: ['Agentic Workflows', 'LLM Evals', 'Distributed Systems', 'Kubernetes', 'System Design'],
+    pills: ['Agentic Workflows', 'LLM Evals', 'Distributed Systems', 'System Design'],
   },
 ];
 
@@ -29,7 +29,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="eyebrow text-center"
+          className="eyebrow"
         >
           // toolkit
         </motion.p>
@@ -38,7 +38,7 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-center font-serif text-4xl md:text-5xl font-semibold mt-3 mb-12 text-ink"
+          className="display-serif text-4xl md:text-5xl font-semibold mt-3 mb-12 text-ink"
         >
           What I work with
         </motion.h2>
@@ -60,11 +60,10 @@ export default function Skills() {
                   <motion.span
                     key={p}
                     variants={{
-                      hidden: { opacity: 0, scale: 0.6, y: 8 },
+                      hidden: { opacity: 0, scale: 0.92, y: 4 },
                       show: { opacity: 1, scale: 1, y: 0, transition: spring },
                     }}
-                    whileHover={{ scale: 1.06 }}
-                    className="px-3.5 py-1.5 rounded-full text-sm border border-white/10 bg-card text-ink/90 hover:border-pink/50 hover:text-pink transition-colors"
+                    className="px-3 py-1.5 rounded-full text-sm border border-rule bg-card text-ink-soft hover:border-ink hover:text-ink transition-colors"
                   >
                     {p}
                   </motion.span>

@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+import CertificateModal from './CertificateModal';
 
 // TODO: add real certifications. These are illustrative placeholders.
+// To attach a certificate image: place the file in `public/certificates/`
+// and set `image: '/certificates/your-file.png'` below.
 const certs = [
     {
     name: 'Python Data Structures and Algorithms',
@@ -8,6 +12,7 @@ const certs = [
     year: 'Ongoing',
     skills: ['DSA', 'Python'],
     color: 'from-pink to-violet',
+    image: null,
   },
   {
     name: 'Cloud Computing: Understanding Core Concepts',
@@ -15,6 +20,7 @@ const certs = [
     year: 'Dec 2024',
     skills: ['AWS', 'Cloud Computing'],
     color: 'from-pink to-violet',
+    image: '/certificates/cloud-computing.jpg',
   },
   {
     name: 'Intermediate SQL for Data Scientists',
@@ -22,6 +28,7 @@ const certs = [
     year: 'Sep 2024',
     skills: ['SQL', 'Database Queries'],
     color: 'from-violet to-pink',
+    image: '/certificates/intermediate-sql.jpg',
   },
   {
     name: 'Marketing Research and Analysis',
@@ -29,6 +36,7 @@ const certs = [
     year: 'Oct 2023',
     skills: ['Hypothesis Testing', 'Statistical Analysis'],
     color: 'from-pink-soft to-violet',
+    image: '/certificates/marketing-research.jpg',
   },
   {
     name: 'Learning SQL Programming',
@@ -36,38 +44,22 @@ const certs = [
     year: 'July 2024',
     skills: ['SQL', 'Data science'],
     color: 'from-violet-soft to-pink',
+    image: '/certificates/learning-sql.jpg',
   },
 ];
 
-function CertBadge({ gradient }) {
+function CertBadge() {
   return (
-    <div className="relative w-16 h-16 shrink-0">
-      <div
-        className={`absolute inset-0 rounded-full blur-md opacity-60 bg-gradient-to-br ${gradient}`}
-      />
-      <div
-        className={`relative w-16 h-16 rounded-full bg-gradient-to-br ${gradient} p-[2px]`}
-      >
-        <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <defs>
-              <linearGradient id="cg" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0%" stopColor="#e879a0" />
-                <stop offset="100%" stopColor="#a855f7" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M12 2l2.39 4.84L20 8l-4 3.9.94 5.5L12 14.77 7.06 17.4 8 11.9 4 8l5.61-1.16L12 2z"
-              fill="url(#cg)"
-            />
-          </svg>
-        </div>
-      </div>
+    <div className="relative w-12 h-12 shrink-0 rounded-full bg-warm border border-rule flex items-center justify-center">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B84D6A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2l2.39 4.84L20 8l-4 3.9.94 5.5L12 14.77 7.06 17.4 8 11.9 4 8l5.61-1.16L12 2z" />
+      </svg>
     </div>
   );
 }
 
 export default function Certifications() {
+  const [active, setActive] = useState(null);
   return (
     <section id="certifications" className="relative px-6 md:px-16 py-24">
       <div className="max-w-6xl mx-auto">
@@ -75,7 +67,7 @@ export default function Certifications() {
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="eyebrow text-center"
+          className="eyebrow"
         >
           // certifications
         </motion.p>
@@ -84,13 +76,13 @@ export default function Certifications() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-center font-serif text-4xl md:text-5xl font-semibold mt-3 mb-4 text-ink"
+          className="display-serif text-4xl md:text-5xl font-semibold mt-3 mb-4 text-ink"
         >
-          Receipts, formally collected
+          Certifications
         </motion.h2>
-        <p className="text-center text-muted max-w-xl mx-auto mb-14">
-          The little badges that say I sat through the modules and passed the
-          tests. Useful, occasionally even fun.
+        <p className="text-muted max-w-xl mb-14 text-[15px] leading-relaxed">
+          Coursework I’ve completed alongside school and work — the kind of
+          knowledge that pays off slowly.
         </p>
 
         <motion.div
@@ -104,46 +96,65 @@ export default function Certifications() {
             <motion.div
               key={c.name}
               variants={{
-                hidden: { opacity: 0, y: 24, rotate: -1 },
+                hidden: { opacity: 0, y: 16 },
                 show: {
                   opacity: 1,
                   y: 0,
-                  rotate: 0,
-                  transition: { type: 'spring', stiffness: 200, damping: 18 },
+                  transition: { duration: 0.5 },
                 },
               }}
-              whileHover={{ y: -4, rotate: 0.5 }}
-              className="card-glow rounded-2xl p-6 flex gap-5 items-start"
+              whileHover={{ y: -3 }}
+              className="rounded-2xl bg-card border border-rule hover:border-ink/30 transition-colors p-6 flex gap-5 items-start"
             >
-              <CertBadge gradient={c.color} />
+              <CertBadge />
               <div className="min-w-0 flex-1">
                 <h3 className="font-serif text-lg md:text-xl text-ink leading-snug">
                   {c.name}
                 </h3>
                 <p className="text-muted text-sm mt-1">{c.issuer}</p>
                 {c.year.toLowerCase() === 'ongoing' ? (
-                  <span className="inline-flex items-center gap-1.5 mt-2 px-2 py-0.5 rounded-full border border-emerald-400/30 bg-emerald-400/5 font-mono text-[11px] text-emerald-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="inline-flex items-center gap-1.5 mt-2 px-2 py-0.5 rounded-full border border-emerald-600/30 bg-emerald-50 font-mono text-[11px] text-emerald-700">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                     Ongoing
                   </span>
                 ) : (
                   <p className="font-mono text-xs text-pink mt-2">{c.year}</p>
                 )}
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-1.5 mt-4">
                   {c.skills.map((s) => (
                     <span
                       key={s}
-                      className="px-2.5 py-1 rounded-full text-xs font-mono text-pink-soft border border-pink/20 bg-pink/5"
+                      className="px-2 py-0.5 rounded text-[11px] font-mono text-ink-soft bg-warm border border-rule"
                     >
                       {s}
                     </span>
                   ))}
                 </div>
+                {c.image && (
+                  <button
+                    type="button"
+                    onClick={() => setActive(c)}
+                    className="mt-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono text-ink border border-rule hover:border-ink transition-colors"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden>
+                      <path d="M4 6h16v12H4z" stroke="currentColor" strokeWidth="1.6" />
+                      <path d="M4 9h16M9 6V4M15 6V4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                    </svg>
+                    View certificate
+                  </button>
+                )}
               </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
+      <CertificateModal
+        open={!!active}
+        onClose={() => setActive(null)}
+        image={active?.image}
+        title={active?.name}
+        subtitle={active ? `${active.issuer} · ${active.year}` : ''}
+      />
     </section>
   );
 }

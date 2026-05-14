@@ -46,12 +46,12 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="font-serif text-4xl md:text-5xl font-semibold mt-3 mb-12 text-ink"
+          className="display-serif text-4xl md:text-5xl font-semibold mt-3 mb-12 text-ink"
         >
-          Where I&apos;ve been
+          Experience
         </motion.h2>
 
-        <ol className="relative border-l border-white/10 pl-6 md:pl-8 space-y-12">
+        <ol className="relative border-l border-rule pl-6 md:pl-8 space-y-12">
           {experience.map((e, i) => (
             <motion.li
               key={i}
@@ -62,13 +62,9 @@ export default function Experience() {
               className="relative"
             >
               <span
-                className="absolute -left-[33px] md:-left-[41px] top-2 w-3.5 h-3.5 rounded-full"
-                style={{
-                  background: 'linear-gradient(135deg, #e879a0, #7c3aed)',
-                  boxShadow: '0 0 12px rgba(232,121,160,0.6)',
-                }}
+                className="absolute -left-[33px] md:-left-[41px] top-2 w-3 h-3 rounded-full bg-pink ring-4 ring-bg"
               />
-              <div className="card-glow rounded-2xl p-6">
+              <div className="rounded-2xl bg-card border border-rule p-6">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h3 className="font-serif text-xl md:text-2xl text-ink">
                     {e.role} <span className="text-muted">·</span>{' '}

@@ -2,7 +2,6 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import BootScreen from './components/BootScreen.jsx';
-import CursorSparkle from './components/CursorSparkle.jsx';
 import Nav from './components/Nav.jsx';
 import Ticker from './components/Ticker.jsx';
 
@@ -19,7 +18,7 @@ export default function Layout() {
     const t = setTimeout(() => {
       sessionStorage.setItem('booted', '1');
       setBooting(false);
-    }, 2200);
+    }, 1600);
     return () => clearTimeout(t);
   }, [booting]);
 
@@ -29,10 +28,7 @@ export default function Layout() {
   }, [location.pathname]);
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
-      <div className="ambient-bg" />
-      <CursorSparkle />
-
+    <div className="relative min-h-screen overflow-x-hidden bg-bg text-ink">
       <AnimatePresence mode="wait">
         {booting && <BootScreen key="boot" />}
       </AnimatePresence>
@@ -43,16 +39,15 @@ export default function Layout() {
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
           >
             <Outlet />
           </motion.div>
         </AnimatePresence>
 
-        {/* Ticker shown on every page as a global "footer band" */}
         {location.pathname !== '/' && <Ticker />}
       </main>
     </div>

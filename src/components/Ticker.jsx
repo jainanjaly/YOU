@@ -18,7 +18,7 @@ function Row() {
       {items.map((it, i) => (
         <span
           key={i}
-          className="font-mono text-sm md:text-base line-through text-muted/70 whitespace-nowrap"
+          className="font-mono text-sm md:text-base line-through text-muted whitespace-nowrap"
         >
           {it}
         </span>
@@ -32,12 +32,12 @@ function Row() {
 
 export default function Ticker() {
   return (
-    <section className="relative py-16 border-y border-white/5 bg-black/30">
+    <section className="relative py-14 border-y border-rule bg-warm">
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="eyebrow text-center mb-6"
+        className="eyebrow text-center mb-5"
       >
         // as never featured in
       </motion.p>
