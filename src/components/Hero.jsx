@@ -17,20 +17,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-600/30 bg-emerald-50 text-emerald-700 text-xs font-mono mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-600/30 bg-emerald-50 text-emerald-700 text-xs mb-8"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
             Open to roles
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-muted mb-8"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-pink" />
-            Anjaly Jain · Software Engineer
           </motion.div>
 
           <motion.h1
@@ -39,7 +29,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.05 }}
             className="display-serif text-[2.6rem] sm:text-5xl md:text-[4.25rem] font-semibold text-ink"
           >
-            Software engineer.{' '}
+            Anjaly Jain — software engineer.{' '}
             <span className="italic text-pink">Backend</span> &amp; AI tooling.
           </motion.h1>
 
@@ -47,7 +37,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="mt-7 text-muted text-lg leading-relaxed max-w-xl"
+            className="mt-7 text-ink-soft text-lg leading-relaxed max-w-xl"
           >
             Currently at BCG. Previously ULAI. I build services that are
             simple to read, easy to maintain, and hard to break.
@@ -96,9 +86,6 @@ export default function Hero() {
                   e.currentTarget.style.display = 'none';
                 }}
               />
-            </div>
-            <div className="absolute -bottom-3 -left-3 px-2.5 py-1 rounded-full bg-card border border-rule font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-              2026 · in frame
             </div>
           </div>
         </motion.div>

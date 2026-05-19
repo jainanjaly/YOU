@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Hero from '../components/Hero.jsx';
-import About from '../components/About.jsx';
 import Timeline from '../components/Timeline.jsx';
 import Contact from '../components/Contact.jsx';
 
@@ -84,7 +83,6 @@ export default function Home() {
         </div>
       </section>
 
-      <About />
       <Timeline />
       <Contact />
     </>

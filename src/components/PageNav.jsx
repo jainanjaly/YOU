@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const order = [
-  { to: '/about', label: 'About' },
   { to: '/timeline', label: 'Timeline' },
   { to: '/projects', label: 'Projects' },
   { to: '/skills', label: 'Skills' },
@@ -23,29 +22,29 @@ export default function PageNav({ current }) {
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="max-w-5xl mx-auto px-6 md:px-16 pb-24 grid grid-cols-2 gap-4"
+      className="max-w-5xl mx-auto px-6 md:px-16 pb-24 grid grid-cols-2 gap-3 sm:gap-4"
     >
       {prev ? (
         <Link
           to={prev.to}
-          className="card-glow group rounded-2xl p-5 flex items-center gap-4"
+          className="card-glow group rounded-2xl p-4 sm:p-5 flex items-center gap-2 sm:gap-4 min-w-0"
         >
-          <span className="font-mono text-xs text-muted group-hover:text-pink transition-colors">
+          <span className="font-mono text-[10px] sm:text-xs text-muted group-hover:text-pink transition-colors shrink-0">
             ← prev
           </span>
-          <span className="font-serif text-lg text-ink group-hover:text-pink transition-colors">
+          <span className="font-serif text-base sm:text-lg text-ink group-hover:text-pink transition-colors truncate">
             {prev.label}
           </span>
         </Link>
       ) : (
         <Link
           to="/"
-          className="card-glow group rounded-2xl p-5 flex items-center gap-4"
+          className="card-glow group rounded-2xl p-4 sm:p-5 flex items-center gap-2 sm:gap-4 min-w-0"
         >
-          <span className="font-mono text-xs text-muted group-hover:text-pink transition-colors">
+          <span className="font-mono text-[10px] sm:text-xs text-muted group-hover:text-pink transition-colors shrink-0">
             ← back
           </span>
-          <span className="font-serif text-lg text-ink group-hover:text-pink transition-colors">
+          <span className="font-serif text-base sm:text-lg text-ink group-hover:text-pink transition-colors truncate">
             Home
           </span>
         </Link>
@@ -53,24 +52,24 @@ export default function PageNav({ current }) {
       {next ? (
         <Link
           to={next.to}
-          className="card-glow group rounded-2xl p-5 flex items-center justify-end gap-4 text-right"
+          className="card-glow group rounded-2xl p-4 sm:p-5 flex items-center justify-end gap-2 sm:gap-4 text-right min-w-0"
         >
-          <span className="font-serif text-lg text-ink group-hover:text-pink transition-colors">
+          <span className="font-serif text-base sm:text-lg text-ink group-hover:text-pink transition-colors truncate">
             {next.label}
           </span>
-          <span className="font-mono text-xs text-muted group-hover:text-pink transition-colors">
+          <span className="font-mono text-[10px] sm:text-xs text-muted group-hover:text-pink transition-colors shrink-0">
             next →
           </span>
         </Link>
       ) : (
         <Link
           to="/"
-          className="card-glow group rounded-2xl p-5 flex items-center justify-end gap-4 text-right"
+          className="card-glow group rounded-2xl p-4 sm:p-5 flex items-center justify-end gap-2 sm:gap-4 text-right min-w-0"
         >
-          <span className="font-serif text-lg text-ink group-hover:text-pink transition-colors">
+          <span className="font-serif text-base sm:text-lg text-ink group-hover:text-pink transition-colors truncate">
             Home
           </span>
-          <span className="font-mono text-xs text-muted group-hover:text-pink transition-colors">
+          <span className="font-mono text-[10px] sm:text-xs text-muted group-hover:text-pink transition-colors shrink-0">
             ↑
           </span>
         </Link>

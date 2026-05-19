@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './Layout.jsx';
 import Home from './pages/Home.jsx';
-import AboutPage from './pages/AboutPage.jsx';
 import TimelinePage from './pages/TimelinePage.jsx';
 import ProjectsPage from './pages/ProjectsPage.jsx';
 import SkillsPage from './pages/SkillsPage.jsx';
@@ -18,7 +17,6 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutPage />} />
           <Route path="/timeline" element={<TimelinePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/skills" element={<SkillsPage />} />

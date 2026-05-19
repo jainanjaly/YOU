@@ -1,8 +1,12 @@
 # Anjaly Jain — Portfolio
 
-Personal portfolio site. React + Vite + Tailwind CSS + Framer Motion.
+Personal portfolio site. Editorial, light-themed, a little opinionated.
 
-## Run
+**Stack:** React · Vite · Tailwind CSS · Framer Motion · React Router
+
+Live sections: Home, Timeline, Projects, Skills, Experience, Certifications, Awards, Publications, Contact.
+
+## Getting started
 
 ```bash
 npm install
@@ -18,8 +22,59 @@ npm run build
 npm run preview
 ```
 
+## Project structure
+
+```
+index.html              # entry, font links
+vite.config.js          # injects __BUILD_DATE__ used by the footer
+tailwind.config.js      # design tokens (colors, fonts, animations)
+src/
+  main.jsx              # React entry
+  App.jsx               # routes
+  Layout.jsx            # nav + page transitions + footer
+  index.css             # base styles + utility classes (.eyebrow, .display-serif…)
+  components/           # Hero, Nav, Timeline, Contact, Ticker, etc.
+  pages/                # one file per route
+public/
+  resume.pdf            # served as /resume.pdf
+  Anjaly_Resume.pdf     # linked from the Contact section
+  projects/             # project screenshots
+  awards/  certificates/
+```
+
+## Customizing content
+
+Most copy lives directly inside the component for that section:
+
+- Hero headline & intro — `src/components/Hero.jsx`
+- Timeline entries — `src/components/Timeline.jsx`
+- Projects list — `src/components/Projects.jsx`
+- Skills — `src/components/Skills.jsx`
+- Experience — `src/components/Experience.jsx`
+- Certifications — `src/components/Certifications.jsx`
+- Awards — `src/components/Awards.jsx`
+- Publications — `src/components/Publications.jsx`
+- Contact links & résumé — `src/components/Contact.jsx`
+
+Drop your real résumé into `public/Anjaly_Resume.pdf` — the **Download résumé** button already points there.
+
+## Design tokens
+
+Colors and fonts are defined in `tailwind.config.js`. Tokens used across the site:
+
+- `bg` / `card` / `warm` — paper, surface, warm-gray section
+- `ink` / `ink-soft` / `muted` — text
+- `pink` / `violet` — accents (used sparingly)
+- `font-serif` — Playfair Display (display headlines via `.display-serif`)
+- `font-sans` — Inter (body)
+- `font-mono` — Space Mono (small labels only)
+
 ## Notes
 
-- Drop your real resume into `public/resume.pdf` — the Download button already points there.
-- Search the codebase for `TODO:` to find spots where copy or links should be refined.
-- The boot screen only runs once per session (cleared when you close the tab).
+- The boot screen only runs once per browser session (cleared when you close the tab).
+- The footer's **Last updated on …** date is injected at build time via `__BUILD_DATE__` in `vite.config.js` — every `npm run build` refreshes it automatically.
+- Search the codebase for `TODO:` to find spots where copy or links still need refining.
+
+## License
+
+Personal site. Code is shared as-is; please don't redistribute the content or images.
