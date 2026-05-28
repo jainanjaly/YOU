@@ -8,7 +8,7 @@ import CertificateModal from './CertificateModal';
 const certs = [
     {
     name: 'Python Data Structures and Algorithms',
-    issuer: 'Udemy - Scott Barrett  ',
+    issuer: 'Udemy - Scott Barrett',
     year: 'Ongoing',
     skills: ['DSA', 'Python'],
     color: 'from-pink to-violet',

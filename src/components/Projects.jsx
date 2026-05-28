@@ -20,14 +20,14 @@ const completed = [
       stack: ['Flutter', 'Dart', 'Firebase Auth', 'Cloud Firestore', 'Cloud Functions'],
       links: [
         { label: 'Poster →', href: '#' /* TODO: add link */ },
-        {label: 'Github ->', href: 'https://github.com/jainanjaly/FoodRAY'}
+        { label: 'GitHub ->', href: 'https://github.com/jainanjaly/FoodRAY' }
       ],
       images: [
         // TODO: add screenshot URLs (e.g. /projects/foodray/1.png)
         "/projects/foodray/foodray_1.jpg",
       ],
       achievements: [
-        'Participated in science exitibition 2025, could not win a prize, but won hearts instead',
+        'Participated in science exhibition 2025, could not win a prize, but won hearts instead',
       ],
     },
   },
@@ -95,7 +95,7 @@ const completed = [
       stack: ['HTML', 'CSS', 'JavaScript', 'Web Development'],
       links: [
         { label: 'Project Link →', href: 'https://convergence-2024.netlify.app' /* TODO: add link */ },
-        { label: 'Github →', href: 'https://github.com/jainanjaly/Convergence-24 '}
+        { label: 'GitHub →', href: 'https://github.com/jainanjaly/Convergence-24' }
       ],
       images: [],
     },
@@ -109,14 +109,6 @@ const ongoing = [
     year: '2026',
     short: "TrailTales is evolving from a functional travel diary into a fully customizable interactive memory book platform. The core vision is to empower users to create personalized, visually stunning digital memory lanes where each trip becomes a unique canvas for creativity, storytelling, and emotional connection.",
     tags: ['React', 'Node.js', 'AWS', 'MongoDB', 'LLMs'],
-  },
-  {
-    id: 'data-agent',
-    name: 'Data-Analysis Agent',
-    year: '2026',
-    short:
-      "An AI tool that turns CSV or Excel files into clear, professional reports with insights and charts. It automates data analysis so you don’t have to do it manually.",
-    tags: ['HTML', 'Agentic', 'LLMs', "Data Visualization"],
   },
 ];
 

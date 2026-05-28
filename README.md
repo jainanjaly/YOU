@@ -26,7 +26,7 @@ npm run preview
 
 ```
 index.html              # entry, font links
-vite.config.js          # injects __BUILD_DATE__ used by the footer
+vite.config.js          # Vite + React configuration
 tailwind.config.js      # design tokens (colors, fonts, animations)
 src/
   main.jsx              # React entry
@@ -72,7 +72,7 @@ Colors and fonts are defined in `tailwind.config.js`. Tokens used across the sit
 ## Notes
 
 - The boot screen only runs once per browser session (cleared when you close the tab).
-- The footer's **Last updated on …** date is injected at build time via `__BUILD_DATE__` in `vite.config.js` — every `npm run build` refreshes it automatically.
+- The footer's **Last updated on …** date is computed at runtime using the current date.
 - Search the codebase for `TODO:` to find spots where copy or links still need refining.
 
 ## License

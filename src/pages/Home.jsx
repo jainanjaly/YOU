@@ -11,7 +11,7 @@ const sections = [
   { to: '/experience', label: 'Experience', tag: '03', desc: 'Where I’ve worked and what I built there.' },
   { to: '/certifications', label: 'Certifications', tag: '04', desc: 'Coursework and credentials.' },
   { to: '/awards', label: 'Awards', tag: '05', desc: 'Competitions and recognitions.' },
-  { to: '/publications', label: 'Publications', tag: '06', desc: 'Things I&apos;ve written down properly.' },
+  { to: '/publications', label: 'Publications', tag: '06', desc: 'Things I\'ve written down properly.' },
 ];
 
 export default function Home() {
