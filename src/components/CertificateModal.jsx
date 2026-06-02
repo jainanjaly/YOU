@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function CertificateModal({ open, onClose, image, title, subtitle }) {
+export default function CertificateModal({ open, onClose, image, title, subtitle, note }) {
   useEffect(() => {
     if (!open) return;
     const onKey = (e) => e.key === 'Escape' && onClose();
@@ -51,6 +51,11 @@ export default function CertificateModal({ open, onClose, image, title, subtitle
                 {subtitle && (
                   <p className="text-muted text-xs md:text-sm mt-0.5 truncate">
                     {subtitle}
+                  </p>
+                )}
+                {note && (
+                  <p className="text-[11px] md:text-xs text-ink-soft mt-2 max-w-xl">
+                    {note}
                   </p>
                 )}
               </div>

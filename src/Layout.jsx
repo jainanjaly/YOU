@@ -54,12 +54,7 @@ export default function Layout() {
       {!booting && (
         <footer className="px-6 md:px-16 py-6 border-t border-rule text-center">
           <p className="font-mono text-[11px] text-muted">
-            Last updated on{' '}
-            {new Date().toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
+            Last updated on June 2, 2026
           </p>
         </footer>
       )}

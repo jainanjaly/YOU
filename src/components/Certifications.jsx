@@ -9,10 +9,11 @@ const certs = [
     {
     name: 'Python Data Structures and Algorithms',
     issuer: 'Udemy - Scott Barrett',
-    year: 'Ongoing',
+  year: 'Completed',
     skills: ['DSA', 'Python'],
     color: 'from-pink to-violet',
-    image: null,
+    image: "/certificates/python-dsa.jpg",
+  note: 'Name on the certificate appears as Kavya Sanjay Jain (my sister\'s account), but I personally completed this course.',
   },
   {
     name: 'Cloud Computing: Understanding Core Concepts',
@@ -154,6 +155,7 @@ export default function Certifications() {
         image={active?.image}
         title={active?.name}
         subtitle={active ? `${active.issuer} · ${active.year}` : ''}
+        note={active?.note}
       />
     </section>
   );
