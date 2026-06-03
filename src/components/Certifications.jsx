@@ -9,7 +9,7 @@ const certs = [
     {
     name: 'Python Data Structures and Algorithms',
     issuer: 'Udemy - Scott Barrett',
-  year: 'Completed',
+  year: 'June 2026',
     skills: ['DSA', 'Python'],
     color: 'from-pink to-violet',
     image: "/certificates/python-dsa.jpg",
@@ -22,6 +22,14 @@ const certs = [
     skills: ['AWS', 'Cloud Computing'],
     color: 'from-pink to-violet',
     image: '/certificates/cloud-computing.jpg',
+  },
+  {
+    name: 'LangChain',
+    issuer: 'KodeKloud - Janakiram MSV',
+    year: 'Ongoing',
+    skills: ['LangChain', 'Prompt Engineering', 'LLM Integration', 'Model Interaction', 'RAG'],
+    color: 'from-violet to-pink',
+    image: null,
   },
   {
     name: 'Intermediate SQL for Data Scientists',
