@@ -104,11 +104,11 @@ const completed = [
 
 const ongoing = [
   {
-    id: 'trailtales',
-    name: 'TrailTales',
+    id: 'cropclinic',
+    name: 'CropClinic',
     year: '2026',
-    short: "TrailTales is evolving from a functional travel diary into a fully customizable interactive memory book platform. The core vision is to empower users to create personalized, visually stunning digital memory lanes where each trip becomes a unique canvas for creativity, storytelling, and emotional connection.",
-    tags: ['React', 'Node.js', 'AWS', 'MongoDB', 'LLMs'],
+    short: "Crop Clinic is growing from a diagnosis prototype into a full SaaS platform that turns every village agri-input shop into a guided \"crop clinic.\" The core vision is to put expert-quality agronomy in the hands of counter agents, so that when a farmer walks in describing a sick crop, they walk out with the right product, the right dosage, and a record they can trust — while managers and shop owners get a live view of their whole network.",
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Razorpay', 'WhatsApp API'],
   },
 ];
 

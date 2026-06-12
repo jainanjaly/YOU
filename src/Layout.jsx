@@ -54,7 +54,7 @@ export default function Layout() {
       {!booting && (
         <footer className="px-6 md:px-16 py-6 border-t border-rule text-center">
           <p className="font-mono text-[11px] text-muted">
-            Last updated on June 3, 2026
+            Last updated on June 12, 2026
           </p>
         </footer>
       )}
