@@ -40,7 +40,7 @@ export default function Home() {
           </motion.h2>
           <p className="text-muted max-w-xl mb-14 text-[15px] leading-relaxed">
             Six pages, each focused on a different facet of the work. Pick
-            whichever one interests you — the rest will still be here.
+            whichever one interests you.
           </p>
 
           <motion.div

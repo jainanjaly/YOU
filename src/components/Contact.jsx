@@ -2,6 +2,16 @@ import { motion } from 'framer-motion';
 
 const links = [
   {
+    label: 'Phone',
+    value: '+91 8867231096',
+    href: 'tel:+918867231096',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6.4 6.4l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z" />
+      </svg>
+    ),
+  },
+  {
     label: 'Email',
     value: 'jainanjaly08@gmail.com',
     href: 'mailto:jainanjaly08@gmail.com',
@@ -15,7 +25,7 @@ const links = [
   {
     label: 'LinkedIn',
     value: 'linkedin.com/in/anjaly-jain',
-    href: 'www.linkedin.com/in/anjaly-jain-845a86286',
+    href: 'https://www.linkedin.com/in/anjaly-jain-845a86286',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
         <path d="M4 4h4v4H4zM4 10h4v10H4zM10 10h4v1.6c.7-1 1.9-1.9 3.6-1.9 3 0 3.4 2 3.4 4.5V20h-4v-5c0-1.4-.4-2.3-1.6-2.3S13 13.6 13 15v5h-3z" />
@@ -63,8 +73,7 @@ export default function Contact() {
           transition={{ delay: 0.2 }}
           className="mt-6 text-muted text-lg max-w-xl leading-relaxed"
         >
-          Open to roles and collaborations. The fastest way to reach me is
-          email — I read it daily.
+          Feel free to reach out for work opportunitie and/or collaborations.
         </motion.p>
 
         <motion.div
