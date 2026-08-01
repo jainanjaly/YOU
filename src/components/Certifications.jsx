@@ -90,8 +90,7 @@ export default function Certifications() {
           Certifications
         </motion.h2>
         <p className="text-muted max-w-xl mb-14 text-[15px] leading-relaxed">
-          Coursework I’ve completed alongside school and work — the kind of
-          knowledge that pays off slowly.
+          Coursework I’ve completed alongside work.
         </p>
 
         <motion.div

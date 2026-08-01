@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 const links = [
   {
     label: 'Phone',
     value: '+91 8867231096',
-    href: 'tel:+918867231096',
+    href: '#',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
         <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6.4 6.4l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z" />
@@ -45,6 +46,30 @@ const links = [
 ];
 
 export default function Contact() {
+  const [showPhone, setShowPhone] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const phoneNumber = links.find((l) => l.label === 'Phone')?.value || '';
+
+  const copyPhoneNumber = async () => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(phoneNumber);
+      } else {
+        const textArea = document.createElement('textarea');
+        textArea.value = phoneNumber;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+      }
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1500);
+    } catch {
+      setCopied(false);
+    }
+  };
+
   return (
     <section id="contact" className="relative px-6 md:px-16 py-28">
       <div className="max-w-4xl mx-auto">
@@ -73,7 +98,7 @@ export default function Contact() {
           transition={{ delay: 0.2 }}
           className="mt-6 text-muted text-lg max-w-xl leading-relaxed"
         >
-          Feel free to reach out for work opportunitie and/or collaborations.
+          Feel free to reach out for work opportunities and/or collaborations.
         </motion.p>
 
         <motion.div
@@ -106,19 +131,50 @@ export default function Contact() {
                 show: { opacity: 1, y: 0 },
               }}
             >
-              <a
-                href={l.href}
-                target={l.label === 'Email' ? undefined : '_blank'}
-                rel="noreferrer"
-                aria-label={l.label}
-                title={l.label}
-                className="group inline-flex items-center justify-center w-11 h-11 rounded-full border border-rule bg-card text-ink-soft hover:border-ink hover:text-pink transition-colors"
-              >
-                {l.icon}
-              </a>
+              {l.label === 'Phone' ? (
+                <button
+                  type="button"
+                  onClick={() => setShowPhone((prev) => !prev)}
+                  aria-label={l.label}
+                  title={l.label}
+                  className="group inline-flex items-center justify-center w-11 h-11 rounded-full border border-rule bg-card text-ink-soft hover:border-ink hover:text-pink transition-colors"
+                >
+                  {l.icon}
+                </button>
+              ) : (
+                <a
+                  href={l.href}
+                  target={l.label === 'Email' ? undefined : '_blank'}
+                  rel="noreferrer"
+                  aria-label={l.label}
+                  title={l.label}
+                  className="group inline-flex items-center justify-center w-11 h-11 rounded-full border border-rule bg-card text-ink-soft hover:border-ink hover:text-pink transition-colors"
+                >
+                  {l.icon}
+                </a>
+              )}
             </motion.li>
           ))}
         </motion.ul>
+
+        {showPhone && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-6 flex flex-wrap items-center gap-2"
+          >
+            <span className="px-3 py-2 rounded-full border border-rule bg-card text-ink-soft text-sm">
+              {phoneNumber}
+            </span>
+            <button
+              type="button"
+              onClick={copyPhoneNumber}
+              className="px-4 py-2 rounded-full text-sm font-medium text-ink border border-rule hover:border-ink transition-colors"
+            >
+              {copied ? 'Copied' : 'Copy number'}
+            </button>
+          </motion.div>
+        )}
 
         <p className="mt-20 font-mono text-[11px] text-muted">
           © {new Date().getFullYear()} Anjaly Jain. All rights reserved. (not really)

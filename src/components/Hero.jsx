@@ -29,8 +29,14 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.05 }}
             className="display-serif text-[2.6rem] sm:text-5xl md:text-[4.25rem] font-semibold text-ink"
           >
-            Anjaly Jain — software engineer.{' '}
-            <span className="italic text-pink">Backend</span> &amp; AI tooling.
+            <span className="block text-2xl sm:text-3xl md:text-4xl font-large tracking-[0.06em] text-pink mb-1 sm:mb-2">
+              Anjaly Jain
+            </span>
+            <span className="block text-[2.0rem] sm:text-[3.1rem] md:text-[4rem] leading-[1.05]">
+              Software engineer |
+              <br />
+              AI engineer
+            </span>
           </motion.h1>
 
           <motion.p
@@ -39,8 +45,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="mt-7 text-ink-soft text-lg leading-relaxed max-w-xl"
           >
-            Currently at BCG. Previously ULAI. I build services that are
-            simple to read, easy to maintain, and hard to break.
+            Currently at BCG.
           </motion.p>
 
           <motion.div

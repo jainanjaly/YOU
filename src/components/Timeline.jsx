@@ -18,13 +18,13 @@ const events = [
   },
   {
     year: 'May 2025',
-    title: 'First internship — ULAI, Bengaluru',
+    title: 'First internshipa at ULAI, Bengaluru',
     note: "Underestimated how much I didn't know about real production code. Learned fast.",
   },
   {
     year: 'Aug 2025',
     title: 'Software Engineer at Boston Consulting Group',
-    note: "Java, Spring Boot, GenAI services, and the polite chaos of an enterprise platform.",
+    note: "Python, Spring Boot, GenAI services, and the chaos of an enterprise platform.",
   },
   {
     year: 'Now',

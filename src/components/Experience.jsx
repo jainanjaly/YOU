@@ -7,12 +7,7 @@ const experience = [
     where: 'Gurugram, HR',
     duration: 'Aug 2025 — Present',
     points: [
-      'Designed and maintained Java + Spring Boot microservices for BCG Research Vantage, supporting content sanitization and publishing workflows at enterprise scale.',
-      'Lifted GenAI service reliability ~70% by introducing unit, integration, and regression test coverage across critical services.',
-      'Cut service response times by 20–25% through Datadog-based performance analysis, bottleneck isolation, and targeted tuning.',
-      'Integrated SonarQube and Prisma scans into repo workflows to surface code-quality and security issues earlier.',
-      'Triaged and resolved production data issues via ServiceNow within an Agile/Scrum cadence.',
-      'Automated multi-source data extraction in Python and built LLM-powered auto-tagging / auto-sanitization services that expanded AI-assisted workflows in production.',
+    'Engineered an end-to-end GenAI workflow automation pipeline that retrieves case data from Snowflake, routes it by project type, and generates sanitized titles via Azure OpenAI with dynamic prompting; added human-in-the-loop approval through webhook-based forms and automated Outlook notifications', 'Built and maintained LLM-based auto-tagging and auto-sanitization services for BCG’s internal Research Vantage content platform, reducing manual content-processing effort and accelerating org-wide adoption of AI-assisted workflows in production', 'Increased GenAI service reliability by ~70% by authoring a comprehensive unit, integration, and regression test suite covering 14+ critical service paths, reducing production incidents to near-zero', 'Hardened security posture across 4 repositories by running SonarQube and Prisma scans, proactively identifying and resolving all critical- and high-severity vulnerabilities before production deployment', 'Automated 4+ recurring multi-source data extraction and reporting workflows in Python, eliminating 8 hrs/week of manual analyst effort and reducing turnaround times from days to minutes', 'Reduced API response latency by 20–25% through Datadog-driven performance profiling, identifying 3 key bottleneck endpoints and implementing targeted query optimization and caching improvements', 'Contributed to Java (Spring Boot) microservices for BCG Research Vantage’s internal content platform, supporting content sanitization and publish workflows at enterprise scale', 'Owned the end-to-end bug lifecycle through ServiceNow, triaging, prioritizing, and resolving 30+ production tickets while collaborating with cross-functional stakeholders to ensure timely issue resolution and platform stability'
     ],
   },
   {
@@ -21,10 +16,7 @@ const experience = [
     where: 'Bengaluru, KA',
     duration: 'May 2025 — Jul 2025',
     points: [
-      'Developed backend APIs for DoxScribe, an AI-powered medical transcription SaaS, enabling structured clinical reports from unstructured audio and text via LLM pipelines.',
-      'Designed and optimized Node.js REST APIs and SQL queries powering analytics data pipelines, improving retrieval performance and reporting reliability.',
-      'Delivered full-stack features for a client analytics dashboard using React.js + Node.js, enabling real-time KPI tracking for business users.',
-      'Integrated third-party APIs into backend services and supported deployment-ready releases through regular CI/CD participation.',
+'Built backend APIs for DoxScribe, an AI-powered medical transcription SaaS, enabling automated generation of structured clinical reports from unstructured audio and text input using LLM pipelines', 'Designed and optimized Node.js REST APIs and SQL queries powering analytics data pipelines, improving data retrieval performance and reporting reliability for production workflows', 'Developed and shipped full-stack features for the ULAI client analytics dashboard using React.js (Vite) and Node.js, improving data visibility and enabling real-time KPI tracking for business users', 'Maintained CI/CD pipeline hygiene across 2 active repos, integrated 3rd-party APIs, enforced Git branching conventions, and maintained deployment-ready build status throughout the internship'
     ],
   },
 ];

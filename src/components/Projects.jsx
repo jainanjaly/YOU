@@ -102,15 +102,7 @@ const completed = [
   },
 ];
 
-const ongoing = [
-  {
-    id: 'cropclinic',
-    name: 'CropClinic',
-    year: '2026',
-    short: "Crop Clinic is growing from a diagnosis prototype into a full SaaS platform that turns every village agri-input shop into a guided \"crop clinic.\" The core vision is to put expert-quality agronomy in the hands of counter agents, so that when a farmer walks in describing a sick crop, they walk out with the right product, the right dosage, and a record they can trust — while managers and shop owners get a live view of their whole network.",
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Razorpay', 'WhatsApp API'],
-  },
-];
+const ongoing = [];
 
 function ProjectCard({ p, onOpen, isOngoing }) {
   return (
@@ -331,16 +323,18 @@ export default function Projects() {
           the completed ones for the full write-up.
         </p>
 
-        <div className="mb-16">
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted mb-5">
-            In progress
-          </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            {ongoing.map((p) => (
-              <ProjectCard key={p.id} p={p} isOngoing />
-            ))}
+        {ongoing.length > 0 && (
+          <div className="mb-16">
+            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted mb-5">
+              In progress
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {ongoing.map((p) => (
+                <ProjectCard key={p.id} p={p} isOngoing />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         <div>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted mb-5">

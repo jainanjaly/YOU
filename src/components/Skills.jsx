@@ -3,15 +3,15 @@ import { motion } from 'framer-motion';
 const groups = [
   {
     name: 'Backend & Languages',
-    pills: ['Java', 'Spring Boot', 'Microservices', 'REST APIs', 'Node.js', 'Flask', 'Python', 'SQL', 'JavaScript'],
+    pills: ['Python','SQL','REST APIs', 'Spring Boot', 'Microservices',  'Node.js', 'Flask', 'Java','JavaScript'],
   },
   {
     name: 'Cloud, DevOps & Tools',
-    pills: ['AWS', 'Docker', 'Git', 'Linux', 'CI/CD', 'Jira', 'ServiceNow', 'SonarQube', 'Prisma', 'Datadog'],
+    pills: ['AWS', 'Docker', 'Git', 'Linux', 'CI/CD', 'Snowflake', 'Datadog'],
   },
   {
     name: 'Currently Learning',
-    pills: ['Agentic Workflows', 'LLM Evals', 'Distributed Systems', 'System Design'],
+    pills: ['Distributed Systems', 'System Design'],
   },
 ];
 
