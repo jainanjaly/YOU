@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const groups = [
   {
     name: 'Backend & Languages',
-    pills: ['Python','SQL','REST APIs', 'Spring Boot', 'Microservices',  'Node.js', 'Flask', 'Java','JavaScript'],
+    pills: ['Python','SQL','REST APIs',  'Power Apps','DSA','Spring Boot', 'Microservices',  'Node.js', 'Flask', 'Java','JavaScript'],
   },
   {
     name: 'Cloud, DevOps & Tools',
