@@ -14,17 +14,22 @@ const events = [
   {
     year: '2024',
     title: 'Won the Science Exhibition at Christ',
-    note: "Realized I liked shipping things people could actually click on.",
+    note: "Realized I liked building things people could actually click on.",
   },
   {
     year: 'May 2025',
-    title: 'First internshipa at ULAI, Bengaluru',
+    title: 'First internship at ULAI, Bengaluru',
     note: "Underestimated how much I didn't know about real production code. Learned fast.",
   },
   {
     year: 'Aug 2025',
     title: 'Software Engineer at Boston Consulting Group',
-    note: "Python, Spring Boot, GenAI services, and the chaos of an enterprise platform.",
+    note: "Python, SQL, GenAI services, and the chaos of an enterprise platform.",
+  },
+  {
+    year: 'Sep 2026',
+    title: 'Software Engineer Intern at Sanas.AI, Bengaluru',
+    note: 'Recently joined a fast-paced startup, excited to learn and contribute in the Speech Intelligence space.',
   },
   {
     year: 'Now',
