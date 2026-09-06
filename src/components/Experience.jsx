@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 const experience = [
   {
     role: 'Software Engineer Intern',
-    company: 'SAnas.ai',
-    where: '',
+    company: 'Sanas.AI',
+    where: 'Bengaluru, KA',
     duration: 'Sep 2026 — Present',
     points: [
       'Increased Speech Intelligence backend services reliability by ~70% by authoring a comprehensive unit, integration, and regression test suite covering 6+ critical service paths, reducing production incidents to near-zero',
