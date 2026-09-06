@@ -45,7 +45,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="mt-7 text-ink-soft text-lg leading-relaxed max-w-xl"
           >
-            Currently at BCG.
+            Currently at Sanas|Ex-BCG.
           </motion.p>
 
           <motion.div

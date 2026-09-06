@@ -2,10 +2,19 @@ import { motion } from 'framer-motion';
 
 const experience = [
   {
-    role: 'Software Engineer',
+    role: 'Software Engineer Intern',
+    company: 'SAnas.ai',
+    where: '',
+    duration: 'Sep 2026 — Present',
+    points: [
+      'Increased Speech Intelligence backend services reliability by ~70% by authoring a comprehensive unit, integration, and regression test suite covering 6+ critical service paths, reducing production incidents to near-zero',
+    ],
+  },
+  {
+    role: 'Software Engineer Trainee',
     company: 'Boston Consulting Group',
     where: 'Gurugram, HR',
-    duration: 'Aug 2025 — Present',
+    duration: 'Aug 2025 — Aug 2026',
     points: [
     'Engineered an end-to-end GenAI workflow automation pipeline that retrieves case data from Snowflake, routes it by project type, and generates sanitized titles via Azure OpenAI with dynamic prompting; added human-in-the-loop approval through webhook-based forms and automated Outlook notifications', 'Built and maintained LLM-based auto-tagging and auto-sanitization services for BCG’s internal Research Vantage content platform, reducing manual content-processing effort and accelerating org-wide adoption of AI-assisted workflows in production', 'Increased GenAI service reliability by ~70% by authoring a comprehensive unit, integration, and regression test suite covering 14+ critical service paths, reducing production incidents to near-zero', 'Hardened security posture across 4 repositories by running SonarQube and Prisma scans, proactively identifying and resolving all critical- and high-severity vulnerabilities before production deployment', 'Automated 4+ recurring multi-source data extraction and reporting workflows in Python, eliminating 8 hrs/week of manual analyst effort and reducing turnaround times from days to minutes', 'Reduced API response latency by 20–25% through Datadog-driven performance profiling, identifying 3 key bottleneck endpoints and implementing targeted query optimization and caching improvements', 'Contributed to Java (Spring Boot) microservices for BCG Research Vantage’s internal content platform, supporting content sanitization and publish workflows at enterprise scale', 'Owned the end-to-end bug lifecycle through ServiceNow, triaging, prioritizing, and resolving 30+ production tickets while collaborating with cross-functional stakeholders to ensure timely issue resolution and platform stability'
     ],
@@ -63,7 +72,8 @@ export default function Experience() {
                     <span className="text-pink">{e.company}</span>
                   </h3>
                   <span className="font-mono text-xs text-muted">
-                    {e.duration} · {e.where}
+                    {e.duration}
+                    {e.where && ` · ${e.where}`}
                   </span>
                 </div>
                 <ul className="mt-4 space-y-2.5">
